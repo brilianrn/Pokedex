@@ -8,9 +8,9 @@ import client from './config/graphql';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ApolloProvider client={client}>
-      <App />
-    </ApolloProvider>
+      <ApolloProvider client={client}>
+        <App />
+      </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
