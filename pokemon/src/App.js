@@ -6,15 +6,15 @@ import {
   Switch
 } from 'react-router-dom';
 import { Navbar } from './components/index';
-import { Home } from './pages/index';
+import { Home, Detail } from './pages/index';
 
 function App() {
   return (
     <Router>
       <Navbar />
       <Switch>
-        <Route path='/detail/:id'>
-          {/* Detail */}
+        <Route path='/detail/:name'>
+          <Detail />
         </Route>
         <Route path='/'>
           <Home />
