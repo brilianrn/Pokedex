@@ -27,12 +27,12 @@ export default function Pokemons({ pokemon }) {
   }
 
   return (
-    <div class="col">
+    <div className="col">
       <a href="#" style={{ textDecoration: 'none' }} onClick={(event) => { changePage({ event, name: pokemon.name, img: pokemon.image }) }} >
-        <div class="card h-100">
-          <img style={{ width: '20em', height: '20em', display: 'flex', marginLeft: 'auto', marginRight: 'auto' }} src={pokemon.image} class="card-img-top" alt={pokemon.name} />
-          <div class="card card-body" style={{ backgroundColor: 'black' }}>
-            <h5 class="card-title text text-center text-light">{firstWord}</h5>
+        <div className="card h-100">
+          <img style={{ width: '20em', height: '20em', display: 'flex', marginLeft: 'auto', marginRight: 'auto' }} src={pokemon.image} className="card-img-top home-img" alt={pokemon.name} />
+          <div className="card card-body" style={{ backgroundColor: 'black' }}>
+            <h5 className="card-title text text-center text-light">{firstWord}</h5>
           </div>
         </div>
       </a>
