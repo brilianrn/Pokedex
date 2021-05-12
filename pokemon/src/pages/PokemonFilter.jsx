@@ -12,9 +12,21 @@ export default function PokemonFilter() {
     }
   })
 
-  loading ? console.log('loading ...') : console.log(data.region.response.locations, region, '-------');
   if (error) {
     return <h1>Error: {error}</h1>
+  }
+
+  function firstWordCapital(word) {
+    let tempFirstWord = word[0].toUpperCase();
+    let tempWord = '';
+
+    for (let i = 0; i < word.length; i++) {
+      if (i !== 0) {
+        tempWord += word[i];
+      }
+    }
+
+    return tempFirstWord + tempWord;
   }
 
   return (
@@ -22,7 +34,7 @@ export default function PokemonFilter() {
       {loading ? <Loading /> :
         <>
           <b>Region Name
-              <span style={{ marginLeft: '12px' }}>: {region}</span>
+              <span style={{ marginLeft: '12px' }}>: {firstWordCapital(region)}</span>
           </b><br />
           <b>Amounts
               <span style={{ marginLeft: '45px' }}>: {data.region.response.locations?.length} pcs</span>
@@ -41,7 +53,7 @@ export default function PokemonFilter() {
                   return (
                     <tr>
                       <th scope="row">{i + 1}</th>
-                      <td>{pokemon.name}</td>
+                      <td>{firstWordCapital(pokemon.name)}</td>
                       <td>
                         <a href={pokemon.url}>
                           {pokemon.url}

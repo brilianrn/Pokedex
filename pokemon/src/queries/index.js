@@ -63,13 +63,13 @@ export const FILTER_POKEMONS = gql`
   }
 `;
 
-// export const FILTER_POKEMONS = gql`
-// query ability($ability: String!) {
-//   ability(ability: $ability) {
-//     params
-//     status
-//     message
-//     response
-//   }
-// }
-// `;
+export const GET_EVOLUTIONS = gql`
+  query evolutionChain($id: String!) {
+    evolutionChain(id: $id) {
+      params
+      status
+      message
+      response
+    }
+  }
+`;

@@ -12,11 +12,24 @@ export default function Navbar() {
     history.push('/' + destination);
   }
 
+  function firstWordCapital(word) {
+    let tempFirstWord = word[0].toUpperCase();
+    let tempWord = '';
+
+    for (let i = 0; i < word.length; i++) {
+      if (i !== 0) {
+        tempWord += word[i];
+      }
+    }
+
+    return tempFirstWord + tempWord;
+  }
+
   return (
     <nav className="navbar navbar-light bg-light shadow">
       {loading ? null :
         <div className="container-fluid">
-          <a className="navbar-brand" onClick={(event) => { changePage({ event, destination: '' }) }}>
+          <a href='#' className="navbar-brand" onClick={(event) => { changePage({ event, destination: '' }) }}>
             <img
               src="https://i.imgur.com/vLj4CHn.png"
               alt="logo"
@@ -24,13 +37,14 @@ export default function Navbar() {
             />
           </a>
           <div class="dropdown">
-            <a href="#">
-              <img src="https://i.imgur.com/1iLgb4N.png" alt="dropdown" style={{ width: '50px', marginLeft: '100px' }} />
+            <a class="nav-link dropdown-toggle text text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Regions
+              {/* <img src="https://i.imgur.com/1iLgb4N.png" alt="dropdown" style={{ width: '50px', marginLeft: '100px' }} /> */}
             </a>
             <div class="dropdown-content">
               {data.regions.results?.map(type => {
                 return (
-                  <a href="#" onClick={(event => { changePage({ event, destination: type.name }) })}>{type.name}</a>
+                  <a href="#" onClick={(event => { changePage({ event, destination: type.name }) })}>{firstWordCapital(type.name)}</a>
                 )
               })}
             </div>

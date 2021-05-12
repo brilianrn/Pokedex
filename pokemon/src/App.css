@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+.home-img {
+  transition: transform .2s;
+}
+
+.home-img:hover {
+  transform: scale(1.2);
+}
+
 .dropbtn {
   background-color: #4CAF50;
   color: white;
