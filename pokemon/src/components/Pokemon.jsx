@@ -16,22 +16,20 @@ export default function Pokemon({ pokemon }) {
     setFirstWord(tempFirstWord + tempWord);
   }, []);
 
-  console.log(pokemon, '----------')
-
   return (
     <div className='container'>
-      <div class="card mb-3">
-        <div class="row g-0">
+      <div className="card mb-3">
+        <div className="row g-0">
           <div className="col-md-4" style={{ display: 'flex', marginTop: 'auto', marginBottom: 'auto' }}>
             <img src={localStorage.image} alt={pokemon.name} style={{ width: '45em' }} />
           </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">{firstWord}</h5>
-              <p class="card-text">Type : {pokemon.types.map((type, i) => {
+          <div className="col-md-8">
+            <div className="card-body">
+              <h5 className="card-title">{firstWord}</h5>
+              <p className="card-text">Type : {pokemon.types.map((type, i) => {
                 return (
                   <>
-                    {i == 0 ?
+                    {i === 0 ?
                       <span>
                         {type.type.name}
                       </span> :
@@ -43,10 +41,10 @@ export default function Pokemon({ pokemon }) {
                 )
               })}
               </p>
-              <p class="card-text">Abilities : {pokemon.abilities.map((ability, i) => {
+              <p className="card-text">Abilities : {pokemon.abilities.map((ability, i) => {
                 return (
                   <>
-                    {i == 0 ?
+                    {i === 0 ?
                       <span>
                         {ability.ability.name}
                       </span> :
@@ -58,10 +56,10 @@ export default function Pokemon({ pokemon }) {
                 )
               })}
               </p>
-              <p class="card-text">Moves : {pokemon.moves.map((move, i) => {
+              <p className="card-text">Moves : {pokemon.moves.map((move, i) => {
                 return (
                   <>
-                    {i == 0 ?
+                    {i === 0 ?
                       <span>
                         {move.move.name}
                       </span> :

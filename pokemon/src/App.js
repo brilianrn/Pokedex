@@ -6,7 +6,7 @@ import {
   Switch
 } from 'react-router-dom';
 import { Navbar } from './components/index';
-import { Home, Detail } from './pages/index';
+import { Home, Detail, PokemonFilter } from './pages/index';
 
 function App() {
   return (
@@ -15,6 +15,9 @@ function App() {
       <Switch>
         <Route path='/detail/:name'>
           <Detail />
+        </Route>
+        <Route path='/:region'>
+          <PokemonFilter />
         </Route>
         <Route path='/'>
           <Home />
